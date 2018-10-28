@@ -1,5 +1,3 @@
-# STILL UNDER DEVELOPMENT
-
 # Hijri calendar utils for Material UI Pickers
 
 This library provides implementation specific utility functions that can
