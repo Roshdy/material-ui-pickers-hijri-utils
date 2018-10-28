@@ -1,13 +1,13 @@
 {
-  "name": "material-ui-pickers-jalali-utils",
+  "name": "material-ui-pickers-hijri-utils",
   "version": "0.4.3",
-  "description": "Calendar utils that add full Persian calendar system support to material-ui-pickers",
+  "description": "Calendar utils that add full hijri calendar system support to material-ui-pickers",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alitaheri/material-ui-pickers-jalali-utils.git"
   },
-  "author": "Ali Taheri Moghaddar",
+  "author": "M.Roshdy Kamel",
   "keywords": [
     "material-ui",
     "material-ui-pickers",
@@ -15,17 +15,17 @@
     "persian",
     "date-picker",
     "datepicker",
-    "jalali",
-    "jalaali"
+    "hijri",
+    "hijri-datepicker"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alitaheri/material-ui-pickers-jalali-utils/issues"
+    "url": "https://github.com/alitaheri/material-ui-pickers-hijri-utils/issues"
   },
-  "homepage": "https://github.com/alitaheri/material-ui-pickers-jalali-utils#readme",
+  "homepage": "https://github.com/alitaheri/material-ui-pickers-hijri-utils#readme",
   "dependencies": {
     "moment": "^2.22.2",
-    "moment-jalaali": "^0.7.4",
+    "moment-hijri": "^2.1.1",
     "moment-range": "^4.0.1"
   }
 }

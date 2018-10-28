@@ -1,7 +1,7 @@
 'use strict';
 
 var Moment = require('moment');
-var jMoment = require('moment-jalaali');
+var iMoment = require('moment-hijri');
 var extendMoment = require('moment-range').extendMoment;
 
 var moment = extendMoment(Moment);
@@ -9,9 +9,9 @@ var symbolMap = {
   1: '۱',
   2: '۲',
   3: '۳',
-  4: '۴',
+  4: '٤',
   5: '۵',
-  6: '۶',
+  6: '٦',
   7: '۷',
   8: '۸',
   9: '۹',
@@ -19,16 +19,16 @@ var symbolMap = {
 };
 
 function parse(value, format) {
-  return jMoment(value, format).locale('fa');
+  return iMoment(value, format).locale('en');
 }
 
-function toJMoment(date) {
-  return jMoment(date ? date.clone() : undefined).locale('fa');
+function toIMoment(date) {
+  return iMoment(date ? date.clone() : undefined).locale('en');
 }
 
 var Utils = function utils() { };
 
-Utils.prototype.toJMoment = toJMoment;
+Utils.prototype.toIMoment = toIMoment;
 
 Utils.prototype.date = Utils.prototype.parse = parse;
 
@@ -61,11 +61,11 @@ Utils.prototype.isBeforeDay = function isBeforeDay(date, value) {
 };
 
 Utils.prototype.isBeforeYear = function isBeforeYear(date, value) {
-  return date.jYear() < value.jYear();
+  return date.iYear() < value.iYear();
 };
 
 Utils.prototype.isAfterYear = function isAfterYear(date, value) {
-  return date.jYear() > value.jYear();
+  return date.iYear() > value.iYear();
 };
 
 Utils.prototype.startOfDay = function startOfDay(date) {
@@ -87,7 +87,7 @@ Utils.prototype.formatNumber = function formatNumber(num) {
 };
 
 Utils.prototype.getMeridiemText = function getMeridiemText(ampm) {
-  return ampm === 'am' ? toJMoment().hours(2).format('A') : toJMoment().hours(14).format('A');
+  return ampm === 'am' ? toIMoment().hours(2).format('A') : toIMoment().hours(14).format('A');
 };
 
 Utils.prototype.addDays = function addDays(date, count) {
@@ -115,27 +115,27 @@ Utils.prototype.setMinutes = function setMinutes(date, value) {
 };
 
 Utils.prototype.getMonth = function getMonth(date) {
-  return date.jMonth();
+  return date.iMonth();
 };
 
 Utils.prototype.getStartOfMonth = function getStartOfMonth(date) {
-  return date.clone().startOf('jMonth');
+  return date.clone().startOf('iMonth');
 };
 
 Utils.prototype.getNextMonth = function getNextMonth(date) {
-  return date.clone().add(1, 'jMonth');
+  return date.clone().add(1, 'iMonth');
 };
 
 Utils.prototype.getPreviousMonth = function getPreviousMonth(date) {
-  return date.clone().subtract(1, 'jMonth');
+  return date.clone().subtract(1, 'iMonth');
 };
 
 Utils.prototype.getYear = function getYear(date) {
-  return date.jYear();
+  return date.iYear();
 };
 
 Utils.prototype.setYear = function setYear(date, year) {
-  return date.clone().jYear(year);
+  return date.clone().iYear(year);
 };
 
 Utils.prototype.mergeDateAndTime = function mergeDateAndTime(date, time) {
@@ -148,13 +148,13 @@ Utils.prototype.getDiff = function getDiff(date, comparing) {
 
 Utils.prototype.getWeekdays = function getWeekdays() {
   return [0, 1, 2, 3, 4, 5, 6].map(function (dayOfWeek) {
-    return toJMoment().weekday(dayOfWeek).format('dd');
+    return toIMoment().weekday(dayOfWeek).format('dd');
   });
 };
 
 Utils.prototype.getWeekArray = function getWeekArray(date) {
-  var start = toJMoment(date).startOf('jMonth').startOf('week');
-  var end = toJMoment(date).endOf('jMonth').endOf('week');
+  var start = toIMoment(date).startOf('iMonth').startOf('week');
+  var end = toIMoment(date).endOf('iMonth').endOf('week');
 
   var weeks = Array.from(moment.range(start, end).by('week'));
 
@@ -162,7 +162,7 @@ Utils.prototype.getWeekArray = function getWeekArray(date) {
 
   weeks.forEach(function (week) {
     var end = week.clone().endOf('week');
-    nestedWeeks.push(Array.from(moment.range(week, end).by('day')).map(toJMoment));
+    nestedWeeks.push(Array.from(moment.range(week, end).by('day')).map(toIMoment));
   });
 
   return nestedWeeks;
@@ -176,30 +176,30 @@ Utils.prototype.getYearRange = function getYearRange(start, end) {
   var current = startDate;
   while (current.isBefore(endDate)) {
     years.push(current);
-    current = current.clone().add(1, 'jYear');
+    current = current.clone().add(1, 'iYear');
   }
 
   return years;
 };
 
 Utils.prototype.getCalendarHeaderText = function getCalendarHeaderText(date) {
-  return date.format('jMMMM jYYYY');
+  return date.format('iMMMM iYYYY');
 };
 
 Utils.prototype.getYearText = function getYearText(date) {
-  return date.format('jYYYY');
+  return date.format('iYYYY');
 };
 
 Utils.prototype.getDatePickerHeaderText = function getDatePickerHeaderText(date) {
-  return date.format('ddd, jMMM jD');
+  return date.format('ddd, iMMM iD');
 };
 
 Utils.prototype.getDateTimePickerHeaderText = function getDateTimePickerHeaderText(date) {
-  return date.format('jMMM jD');
+  return date.format('iMMM iD');
 };
 
 Utils.prototype.getDayText = function getDayText(date) {
-  return date.format('jD');
+  return date.format('iD');
 };
 
 Utils.prototype.getHourText = function getHourText(date, ampm) {
