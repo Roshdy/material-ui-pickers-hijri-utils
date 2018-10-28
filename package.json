@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alitaheri/material-ui-pickers-jalali-utils.git"
+    "url": "git+https://github.com/roshdy/material-ui-pickers-hijri-utils.git"
   },
   "author": "M.Roshdy Kamel",
   "keywords": [
@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alitaheri/material-ui-pickers-hijri-utils/issues"
+    "url": "https://github.com/roshdy/material-ui-pickers-hijri-utils/issues"
   },
-  "homepage": "https://github.com/alitaheri/material-ui-pickers-hijri-utils#readme",
+  "homepage": "https://github.com/roshdy/material-ui-pickers-hijri-utils#readme",
   "dependencies": {
     "moment": "^2.22.2",
     "moment-hijri": "^2.1.1",
