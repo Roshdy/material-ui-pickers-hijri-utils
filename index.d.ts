@@ -1,6 +1,6 @@
-import { Moment } from 'moment-jalaali';
+import { Moment } from 'moment-hijri';
 
-declare class PersianUtils {
+declare class HijriUtils {
   public toJMoment(date: any): Moment;
   public parse(value: any, format: string): Moment;
   public date(value: any, format?: string): Moment;
@@ -53,4 +53,4 @@ declare class PersianUtils {
   public getYearText(date: Moment): string;
 }
 
-export default PersianUtils;
+export default HijriUtils;
