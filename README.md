@@ -8,7 +8,8 @@ components to correctly render a Hijri calendar.
 
 Please refer to material-ui-pickers's
 [documentation](https://github.com/dmtrKovalenko/material-ui-pickers)
-under localized example to learn how to use it.
+under localized example to learn how to use it. 
+Exactly like Persian but replacing `j` format to `i` (i.e. `date.format('iYYY')` instead of `date.format('jYYY')` )
 
 
 ## Installation
