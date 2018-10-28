@@ -5,6 +5,12 @@ var iMoment = require('moment-hijri');
 var extendMoment = require('moment-range').extendMoment;
 
 var moment = extendMoment(Moment);
+var arWeekDays = {
+  weekdays : 'الأحد_الإثنين_الثلاثاء_الأربعاء_الخميس_الجمعة_السبت'.split('_'),
+  weekdaysShort : 'أحد_إثنين_ثلاثاء_أربعاء_خميس_جمعة_سبت'.split('_'),
+  weekdaysMin : 'ح_ن_ث_ر_خ_ج_س'.split('_')
+}
+moment.updateLocale('ar-sa', arWeekDays);
 var symbolMap = {
   1: '۱',
   2: '۲',
@@ -19,11 +25,11 @@ var symbolMap = {
 };
 
 function parse(value, format) {
-  return iMoment(value, format).locale('en');
+  return iMoment(value, format);
 }
 
 function toIMoment(date) {
-  return iMoment(date ? date.clone() : undefined).locale('en');
+  return iMoment(date ? date.clone() : undefined);
 }
 
 var Utils = function utils() { };
