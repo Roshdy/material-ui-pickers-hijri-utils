@@ -15,7 +15,7 @@ Exactly like Persian but replacing `j` format to `i` (i.e. `date.format('iYYY')`
 You can install this package with the following command:
 
 ```sh
-npm install material-ui-pickers-jalali-utils
+npm install material-ui-pickers-hijri-utils
 ```
 
 ## Thanks
