@@ -182,7 +182,7 @@ Utils.prototype.getYearRange = function getYearRange(start, end) {
   var current = startDate;
   while (current.isBefore(endDate)) {
     years.push(current);
-    current = current.clone().add(1, 'iYear');
+    current = current.clone().add(1, 'year');
   }
 
   return years;
