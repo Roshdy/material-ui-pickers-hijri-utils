@@ -1,6 +1,6 @@
 {
   "name": "material-ui-pickers-hijri-utils",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Calendar utils that add full hijri calendar system support to material-ui-pickers",
   "main": "index.js",
   "repository": {

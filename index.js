@@ -125,7 +125,7 @@ Utils.prototype.getMonth = function getMonth(date) {
 };
 
 Utils.prototype.getStartOfMonth = function getStartOfMonth(date) {
-  return date.clone().startOf('iMonth');
+  return date.clone().startOf('month');
 };
 
 Utils.prototype.getNextMonth = function getNextMonth(date) {
